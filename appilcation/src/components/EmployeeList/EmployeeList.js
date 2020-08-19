@@ -25,12 +25,14 @@ export default class EmployeeList extends Component {
   };
 
   filteredEmployees = () => {
-    return this.state.employees.filter(employee => {
+    return this.state.employees.filter((employee) => {
       const name = `${employee.name.first} ${employee.name.last}`.toLowerCase();
       const { searchTerm, employees } = this.state;
-      return searchTerm.length ? name.includes(searchTerm.toLowerCase()) : employees;
-    })
-  }
+      return searchTerm.length
+        ? name.includes(searchTerm.toLowerCase())
+        : employees;
+    });
+  };
 
   sortByName = (direction) => {
     this.setState({
